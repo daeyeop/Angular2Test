@@ -13,7 +13,7 @@ import { FwModule } from '../fw/fw.module'
     BrowserModule,
     FwModule
   ],
-  providers: [],
+  providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
