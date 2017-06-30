@@ -7,19 +7,18 @@ import { UserApi } from '../../fw/users/user-api';
 @Injectable()
 export class UserService implements UserApi {
 
-  isAuthenticated = false;
+  isAuthenticated = true;
 
-    constructor(private router: Router) { }
+  constructor(private router: Router) { }
 
   signIn(username: string, password: string, rememberMe: boolean): Observable<any> {
     console.log('UserService.signIn: ' + username + ' ' + password + ' ' + rememberMe);
     this.isAuthenticated = true;
     return Observable.of({}).delay(2000);
-
-   // return Observable.of({}).delay(2000).flatMap(x=>Observable.throw('Invalid User Name and/or Password'));
+    // return Observable.of({}).delay(2000).flatMap(x=>Observable.throw('Invalid User Name and/or Password'));
   }
 
-     signOut(): Observable<any> {
+  signOut(): Observable<any> {
       this.isAuthenticated = false;
       this.router.navigate(['/signin']);
       return Observable.of({});

@@ -9,18 +9,17 @@ import { MenuItem, MenuService } from '../../services/menu.service';
   selector: 'fw-menu-item',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css'],
-    animations: [
+  animations: [
         trigger('visibilityChanged', [
             transition(':enter', [   // :enter is alias to 'void => *'
                 style({opacity:0}),
-                animate(500, style({opacity:1})) 
+                animate(250, style({opacity:1})) 
             ]),
             transition(':leave', [   // :leave is alias to '* => void'
-                animate(500, style({opacity:0})) 
+                animate(100, style({opacity:0})) 
             ])
         ])
     ]
-
 })
 export class MenuItemComponent implements OnInit {
   @Input() item = <MenuItem>null;  // see angular-cli issue #2034

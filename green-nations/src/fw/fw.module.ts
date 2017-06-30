@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { ContentComponent } from './content/content.component';
@@ -16,21 +17,19 @@ import { MenuService } from './services/menu.service';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInComponent } from './users/sign-in/sign-in.component';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
 import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
-
-
+import { PanelComponent } from './panels/panel/panel.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     FrameworkBodyComponent,
@@ -46,7 +45,8 @@ import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-fie
     SignInComponent,
     RegisterUserComponent,
     DynamicFormComponent,
-    DynamicFieldComponent
+    DynamicFieldComponent,
+    PanelComponent
   ],
   providers: [
     FrameworkConfigService,
@@ -55,7 +55,10 @@ import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-fie
   ],
   exports: [
     FrameworkBodyComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    PanelComponent,
+    ScreenLarge,
+    ScreenBelowLarge
   ]
 })
 export class FwModule { }
